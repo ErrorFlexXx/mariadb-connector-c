@@ -423,6 +423,13 @@ SET_TARGET_PROPERTIES(libmariadb PROPERTIES IMPORTED_INTERFACE_LINK_LIBRARIES "$
 
 SET_TARGET_PROPERTIES(libmariadb PROPERTIES PREFIX "")
 
+target_include_directories(mariadbclient
+    PUBLIC
+    $<BUILD_INTERFACE:${CC_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CC_BINARY_DIR}/include>
+    $<INSTALL_INTERFACE:include/mariadbclient>
+)
+
 #
 # Installation
 #
